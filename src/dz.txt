@@ -1,22 +1,89 @@
+Теория
+
+Функциональные интерфейсы ---> 
+
+https://javarush.com/groups/posts/3981-kofe-breyk-182-funkcionaljhnihe-interfeysih-v-java
+
+https://metanit.com/java/tutorial/9.3.php
+
+
+
+Лямба выражения ---> 
+
+https://javarush.com/groups/posts/845-lambda-vihrazhenija-na-primerakh
+
+https://metanit.com/java/tutorial/9.1.php
+
+
+Generics ---> 
+
+https://medium.com/@pratik.941/understanding-generics-in-java-a-comprehensive-guide-afd437f413cf
+
+https://metanit.com/java/tutorial/3.11.php
+
+
 ДЗ
-1. Уникальные слова в предложении
-В main есть строка:
-String sentence = "java is fun and java is powerful";
 
-Требования:
-Разбей строку на слова.
-Сохрани все слова в HashSet<String>.
 
-Выведи:
-количество уникальных слов
-сами уникальные слова
+1. Банк — результат перевода как объект
 
-2. Уникальные номера
-В классе Main создай HashSet<String>.
 
-Условие:
-Пользователь вводит 5 строк (номера машин). Нужно сохранить только уникальные номера.
+Условие
 
-После ввода — вывести:
-сколько уникальных номеров получилось
-какие именно (в любом порядке)
+Есть класс BankAccount:
+
+
+class BankAccount {
+    String owner;
+    double balance;
+
+    BankAccount(String owner, double balance) {
+        this.owner = owner;
+        this.balance = balance;
+    }
+}
+
+Создай класс TransferResult:
+
+
+class TransferResult {
+    boolean success;
+    String message;
+    double remainingBalance;
+}
+
+
+Задание
+
+В классе Bank реализуй метод:
+
+TransferResult transfer(BankAccount from, BankAccount to, double amount)
+
+
+Метод должен:
+
+если денег хватает:
+
+списать деньги
+
+зачислить деньги
+
+вернуть объект TransferResult с success = true
+
+если не хватает:
+
+ничего не менять
+
+вернуть объект TransferResult с success = false
+
+В main:
+
+создай два аккаунта
+
+вызови transfer
+
+используй возвращённый объект:
+
+выведи сообщение
+
+если success == true, выведи новый баланс
