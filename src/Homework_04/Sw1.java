@@ -24,4 +24,9 @@ public class Sw1 {
         }
         System.out.println(count);
     }
+
+
+    public static  void test(){
+
+    }
 }

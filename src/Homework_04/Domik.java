@@ -17,5 +17,8 @@ public class Domik {
 
         System.out.println(str.equalsIgnoreCase(str1));
 
+
+
+        Sw1.test();
     }
 }

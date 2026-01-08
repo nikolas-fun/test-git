@@ -22,68 +22,73 @@ https://medium.com/@pratik.941/understanding-generics-in-java-a-comprehensive-gu
 https://metanit.com/java/tutorial/3.11.php
 
 
+Теория
+
+Stream --->
+
+https://javarush.com/groups/posts/2203-stream-api
+
+https://metanit.com/java/tutorial/10.1.php
+
+-------------------------------------------------------------
+
+ArrayList ----> https://javarush.com/groups/posts/klass-arraylist
+
+HashSet -----> https://javarush.com/groups/posts/2147-hashset-v-java
+
+
+---------------------------------------------------------------
+
+
 ДЗ
 
+1. Подсчёт элементов (ArrayList)
 
-1. Банк — результат перевода как объект
+Условие:
+Есть ArrayList<String> со словами.
 
+Нужно:
 
-Условие
+Оставить слова длиной больше 5
 
-Есть класс BankAccount:
+Посчитать количество таких слов
 
+Пример входных данных:
 
-class BankAccount {
-    String owner;
-    double balance;
-
-    BankAccount(String owner, double balance) {
-        this.owner = owner;
-        this.balance = balance;
-    }
-}
-
-Создай класс TransferResult:
+["stream", "java", "collection", "api", "filter"]
 
 
-class TransferResult {
-    boolean success;
-    String message;
-    double remainingBalance;
-}
+Ожидаемый результат:
+
+2
+
+Подсказка:
+filter → count
+
+---------------------------------------------------------------
+
+2. Проверка условий (HashSet)
+
+Условие:
+Есть HashSet<String> с email-адресами.
+
+Нужно:
+
+Проверить, все ли email содержат символ @
+
+Проверить, есть ли хотя бы один email с доменом "gmail.com"
+
+Пример входных данных:
+
+["test@gmail.com", "admin@yahoo.com", "user@mail.com"]
 
 
-Задание
+Ожидаемый результат:
 
-В классе Bank реализуй метод:
+allMatch → true
+anyMatch → true
 
-TransferResult transfer(BankAccount from, BankAccount to, double amount)
 
+Подсказка:
+allMatch, anyMatch
 
-Метод должен:
-
-если денег хватает:
-
-списать деньги
-
-зачислить деньги
-
-вернуть объект TransferResult с success = true
-
-если не хватает:
-
-ничего не менять
-
-вернуть объект TransferResult с success = false
-
-В main:
-
-создай два аккаунта
-
-вызови transfer
-
-используй возвращённый объект:
-
-выведи сообщение
-
-если success == true, выведи новый баланс

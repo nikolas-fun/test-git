@@ -15,11 +15,12 @@ BankAccount account2 = new BankAccount("Ira", 100);
         используй возвращённый объект:
         выведи сообщение
         если success == true, выведи новый баланс*/
-
-        TransferResult result = account1.transfer(account2, account1, 500);
-        System.out.println(result.message);
+        Bank bank = new Bank();
+        TransferResult result = bank.transfer(account2, account1, 500);// new TransferResult("перевод успешный", true, from.balance);
         if (result.success) {
             System.out.println("Новый баланс отправителя: " + result.remainingBalance);
+            System.out.println("Баланс получателя: " + account2.balance);
         }
+
     }
 }
