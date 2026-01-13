@@ -24,6 +24,7 @@ public class Main {
                 .map(String::toUpperCase)
                 .sorted()
                 .forEach(System.out::println);
+
 listInt.stream().filter(x -> x%2==0).map(x -> x*2).sorted().forEach(System.out::println);
     }
 }
