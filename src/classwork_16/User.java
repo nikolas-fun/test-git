@@ -1,17 +1,27 @@
 package classwork_16;
 
-public class User {
+public class User /*implements Comparable<User>*/{
     private String name;
     private int age;
     private String email;
     private boolean active;
-    public User(String name, int age, String email, boolean active) {
+    private String city;
+    public User(String name, int age, String email, boolean active, String city) {
         this.name = name;
         this.age = age;
         this.email = email;
         this.active = active;
-
+        this.city = city;
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String getName() {
         return name;
     }
@@ -52,4 +62,11 @@ public class User {
                 ", active=" + active +
                 '}';
     }
+
+
+
+  /*  @Override
+    public int compareTo(User other) {
+        return this.age - other.age;
+    }*/
 }

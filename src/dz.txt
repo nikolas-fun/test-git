@@ -52,120 +52,57 @@ HashSet -----> https://javarush.com/groups/posts/2147-hashset-v-java
 
 
 
- ДЗ
+ Теория
+
+  1. Joining Stream ----> https://www.geeksforgeeks.org/java/java-8-streams-collectors-joining-method-with-examples/
+
+  2. Сортировка в Java ---->
+  https://javarush.com/groups/posts/6459-kofe-breyk-253-v-chem-razlichie-mezhdu-comparable-i-comparator-chto-takoe-varargs-peremennihe-a
+
+  3.Сортировка в Stream ----> https://javarush.com/groups/posts/6449-kofe-breyk-250-kak-v-java-stream-api-ispoljhzovatjh-collect-i-sorted-ponimanie-lombok-v-java-za
+
+  4. Загадочное :: ----> https://javarush.com/quests/lectures/questsyntaxpro.level18.lecture01
 
 
- 1. «Первые N элементов»
+  ДЗ
 
- Условие:
- Есть список имён. Нужно получить первые 3 имени, отсортированные по алфавиту.
+  Работай с тем же классом User
 
- List<String> names = List.of(
-         "Alex", "Bob", "Charlie", "David", "Eve", "Frank"
- );
+  1. Активные первыми
 
+  Условие:
+  Отсортируй пользователей так, чтобы активные были первыми.
+  Другие поля не учитывать.
 
- Ожидаемый результат:
+  📌 Ожидаемый результат:
+  Сначала все active = true, потом false.
 
- Alex, Bob, Charlie
+  --------------------------------------------------------------------------
 
+  2. Самые молодые первыми
 
- 👉 Подсказка: sorted() + limit()
+  Условие:
+  Отсортируй пользователей по возрасту по возрастанию.
+  Если возраст одинаковый — порядок не важен.
 
- --------------------------------------------------------------------
+  📌 Подсказка:
 
- 2. «Пропусти вступление»
+  Comparator.comparing
 
- Условие:
- Есть список сообщений чата. Первые 2 сообщения — системные.
- Нужно пропустить первые 2 сообщения и вывести остальные.
+  sorted(Comparator)
 
- List<String> messages = List.of(
-         "System: chat created",
-         "System: user joined",
-         "Hi!",
-         "Hello!",
-         "How are you?"
- );
+  --------------------------------------------------------------------------
 
+  3. Все имена в одну строку
 
- Ожидаемый результат:
+  Условие:
+  Получи строку со всеми именами пользователей,
+  разделёнными ", ".
 
- Hi!
- Hello!
- How are you?
+  --------------------------------------------------------------------------
 
+  4. Имена активных пользователей
 
- 👉 Подсказка: skip()
-
- --------------------------------------------------------------------
-
- 3. «Страница результатов (pagination)»
-
- Условие:
- Есть список товаров. На одной странице показывается по 3 товара.
- Вывести вторую страницу.
-
- List<String> products = List.of(
-         "Laptop", "Phone", "Tablet",
-         "Monitor", "Keyboard", "Mouse",
-         "Printer"
- );
-
-
- Ожидаемый результат:
-
- Monitor
- Keyboard
- Mouse
-
-
- 👉 Логика:
-
- пропустить 3 (skip)
-
- взять 3 (limit)
-
- --------------------------------------------------------------------
-
- 4. Преобразовать и собрать в список
-
- Условие:
- Есть список строк. Нужно:
-
- Привести все строки к верхнему регистру
-
- Собрать результат в List
-
- List<String> words = List.of("java", "spring", "stream");
-
-
- Ожидаемый результат:
-
- ["JAVA", "SPRING", "STREAM"]
-
-
- 👉 Подсказка: map() + collect(Collectors.toList())
-
- --------------------------------------------------------------------
-
- 5. Убрать дубликаты и собрать в Set
-
- Условие:
- Есть список email-адресов, в котором есть дубликаты.
- Нужно получить уникальные email’ы.
-
- List<String> emails = List.of(
-         "a@mail.com",
-         "b@mail.com",
-         "a@mail.com",
-         "c@mail.com"
- );
-
-
- Ожидаемый результат:
-
- [a@mail.com, b@mail.com, c@mail.com]
-
-
- 👉 Подсказка: collect(Collectors.toSet())
+  Условие:
+  Получи строку из имён только активных пользователей,
+  разделитель — " | ".
